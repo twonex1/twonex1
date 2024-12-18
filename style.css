@@ -1,0 +1,271 @@
+/* Fundo */
+body {
+  font-family: sans-serif;
+  background-color: #000;
+  background-image: url("samurai.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  animation: backgroundAnimation 30s linear infinite;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes backgroundAnimation {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 50% 50%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+/* Cabeçalho */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1.5rem;
+  background: rgba(0, 0, 0, 0.7);
+  background-image: linear-gradient(145deg, rgba(8, 8, 8, 0.8), rgb(0, 0, 0));
+  color: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  position: relative;
+  z-index: 10;
+}
+
+/* Logo */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.logo-icon {
+  font-size: 2rem;
+  color: #c70f0f;
+  animation: pulse 1.5s infinite;
+  text-shadow: 0 0 10px #1f0606, 0 0 20px #3a0a0a;
+}
+
+/* Menu suspenso e navegação */
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.right-nav {
+  display: flex;
+  align-items: center;
+}
+
+.profile-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.profile-img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.dropdown-menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 50px;
+  right: 10px;
+  background-color: #000000;
+  color: #333;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.dropdown-menu.show {
+  display: flex;
+}
+
+.dropdown-menu a {
+  padding: 8px 12px;
+  text-decoration: none;
+  color: #fff7f7;
+  transition: background-color 0.3s;
+}
+
+.dropdown-menu a:hover {
+  background-color: hsl(0, 79%, 24%);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    text-shadow: 0 0 10px #550505, 0 0 20px #5c0707;
+  }
+  50% {
+    transform: scale(1.2);
+    text-shadow: 0 0 15px #750808, 0 0 30px #000000;
+  }
+}
+
+/* Seções Profile e Gaming Setup */
+.profile, .gaming-setup {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  max-width: 800px;
+  margin: 2rem auto;
+  color: #ffffff;
+}
+
+.profile img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.gaming-setup h2 {
+  color: #fff;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+.gaming-setup .item {
+  display: inline-block;
+  margin: 10px;
+  width: calc(25% - 20px);
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.gaming-setup .item img {
+  width: 100%;
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.gaming-setup .item:hover {
+  transform: translateY(-5px);
+}
+
+.gaming-setup .item h3 {
+  color: #fff;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+.gaming-setup .item p {
+  color: #ccc;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+  .gaming-setup .item {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .gaming-setup .item {
+    width: 100%;
+  }
+}
+
+/* Player de Música */
+.music-player {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: rgba(192, 16, 16, 0.8);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.music-player .song-info {
+  margin-bottom: 10px;
+}
+
+.music-player .song-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.music-player .controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.music-player .control-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.music-player .control-button img {
+  width: 24px;
+  height: 24px;
+}
+
+.music-player .progress-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.music-player .progress-container span {
+  font-size: 0.8rem;
+}
+
+.music-player #progress-bar {
+  flex-grow: 1;
+  margin: 0 10px;
+}
+
+.music-player .volume-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.music-player .volume-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.music-player #volume-bar {
+  width: 100px;
+}

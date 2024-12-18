@@ -1,0 +1,141 @@
+CSS 
+
+
+/* Estilos gerais */
+body {
+    font-family: sans-serif;
+    background-color: hsl(177, 100%, 54%);
+    background-image: url("twoneee.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: backgroundAnimation 10s linear infinite;
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 50% 50%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Cabeçalho */
+header {
+    color: #fff;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Navegação */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+/* Conteúdo */
+main {
+    padding: 2rem;
+}
+
+/* Seção do perfil */
+.profile {
+    background-color: rgba(139, 154, 163, 0.8);
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.profile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+/* Seção de equipamento */
+.gaming-setup {
+    background-color: black; /* Fundo preto */
+    color: white; /* Texto branco para contraste */
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra mais forte */
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens se movam para a próxima linha */
+    justify-content: center; /* Centraliza os itens no centro */
+    text-align: center; /* Centraliza o texto dentro da seção */
+}
+
+.gaming-setup h2 {
+    color: #fff; /* Garante que o título seja branco */
+    margin-bottom: 2rem; /* Espaço abaixo do título */
+    width: 100%; /* Garante que o título ocupe toda a largura disponível */
+    text-align: center; /* Centraliza o título */
+}
+
+/* Itens de Gaming Setup */
+.gaming-setup .item {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column; /* Faz a imagem e o texto ficarem em uma coluna */
+    align-items: center; /* Centraliza a imagem e o texto */
+    text-align: center; /* Centraliza o texto dentro do item */
+    width: 45%; /* Define a largura de cada item, permitindo 2 itens por linha */
+    margin-bottom: 2rem; /* Espaço abaixo de cada item */
+}
+
+/* Estilo da imagem */
+.gaming-setup .item img {
+    width: 100%; /* Faz as imagens ocuparem 100% da largura do item */
+    max-width: 250px; /* Limita a largura máxima das imagens */
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra para as imagens */
+    margin-bottom: 1rem; /* Espaço abaixo da imagem */
+}
+
+/* Estilo do título do item */
+.gaming-setup .item h3 {
+    margin-top: 1rem;
+    color: #fff; /* Garante que o nome do item seja branco */
+    font-size: 1rem; /* Ajusta o tamanho da fonte */
+}
+
+/* Estilo da descrição */
+.gaming-setup .item p {
+    color: #ccc; /* Cor mais suave para a descrição */
+    font-size: 0.9rem; /* Ajusta o tamanho da fonte */
+    margin-top: 0.5rem; /* Espaço acima da descrição */
+}

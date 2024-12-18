@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Damon Twone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span class="logo-icon">愛</span>
+            <span class="logo-text"></span>
+        </div>
+        <nav>
+            <div class="right-nav">
+                <div class="dropdown">
+                    <button class="profile-btn">
+                        <img src="Satoru Icon.jfif" alt="Profile" class="profile-img">
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="https://konect.gg/two1" target="_blank">Konect.gg</a>
+                        <a href="https://discord.gg/cCnCpHzf" target="_blank">Discord</a>
+                        <a href="https://steamcommunity.com/profiles/76561199221040162/" target="_blank">Steam</a>
+                        <a href="https://open.spotify.com/user/31xi64wsglvb25novopbtu5ocree" target="_blank">Spotify</a>                       
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="profile">
+            <img src="Satoru Icon.jfif" alt="Profile Picture">
+            <div class="info">
+                <h2>twone</h2>
+                <p>Me against the world.</p>
+            </div>
+        </div>
+
+        <div class="gaming-setup">
+            <h2>Gaming Setup</h2>
+            <div class="item">
+                <img src="monitor.png" alt="Monitor 1">
+                <h3>Monitor one</h3>
+                <p>SuperFrame Precision</p>
+            </div>
+            <div class="item">
+                <img src="pngwing.com.png" alt="Airpods Pro">
+                <h3>Fones</h3>
+                <p>Apple AirPods Pro</p>
+            </div>
+            <div class="item">
+                <img src="Headset-Photoroom.png" alt="Headset">
+                <h3>Headset</h3>
+                <p>Headset Sakura</p>
+            </div>
+            <div class="item">
+                <img src="mouse.png" alt="Mouse">
+                <h3>Mouse</h3>
+                <p>Attack shark x3 pro</p>
+            </div>
+            <div class="item">
+                <img src="teclado-Photoroom.png" alt="Teclado">
+                <h3>Teclado</h3>
+                <p>Redragon Fizz</p>
+            </div>
+            <div class="item">
+                <img src="pad-Photoroom.png" alt="MousePad">
+                <h3>MousePad</h3>
+                <p>日本の桜マウスパッド</p>
+            </div>
+        </div>
+
+        <div class="music-player">
+            <div class="song-info">
+                <span class="song-title">jayA Luuck - Nemo</span>
+            </div>
+            <div class="controls">
+                <button id="prev" class="control-button">
+                    <img src="seta-esquerda.png" alt="Previous">
+                </button>
+                <button id="play-pause" class="control-button">
+                    <img src="botao-de-av.png" alt="Play/Pause">
+                </button>
+                <button id="next" class="control-button">
+                    <img src="seta-direita.png" alt="Next">
+                </button>
+            </div>
+            <div class="progress-container">
+                <span id="current-time">00:00</span>
+                <input type="range" id="progress-bar" value="0" max="100">
+                <span id="duration">00:00</span>
+            </div>
+            <div class="volume-container">
+                <img src="volume.png" alt="Volume" class="volume-icon">
+                <input type="range" id="volume-bar" value="100" max="100">
+            </div>
+            <audio id="audio-player">
+                <source src="JayA Luuck - Nemo (Videoclipe Oficial).mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    </main>
+
+    <script src="menu-script.js"></script>
+</body>
+</html>
