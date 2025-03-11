@@ -21,9 +21,9 @@ const durationDisplay = document.getElementById('duration');
 const volumeBar = document.getElementById('volume-bar');
 
 const playlist = [
+  { title: "Labrinth - Mount Everest", src: "Labrinth - Mount Everest.mp3" },
   { title: "JayA Luuck - Nemo", src: "JayA Luuck - Nemo (Videoclipe Oficial).mp3" },
-  { title: "Matuê - A Morte do Autotune 💔", src: "autotune.mp3" },
-  { title: "Labrinth - Mount Everest", src: "Labrinth - Mount Everest.mp3" }
+  { title: "Matuê - A Morte do Autotune 💔", src: "autotune.mp3" }
 ];
 
 let currentTrackIndex = 0;
