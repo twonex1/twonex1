@@ -21,18 +21,26 @@ const durationDisplay = document.getElementById('duration');
 const volumeBar = document.getElementById('volume-bar');
 
 const playlist = [
-  { title: "Labrinth - Mount Everest", src: "Labrinth - Mount Everest.mp3" },
-  { title: "JayA Luuck - Nemo", src: "JayA Luuck - Nemo (Videoclipe Oficial).mp3" },
-  { title: "Matuê - A Morte do Autotune 💔", src: "autotune.mp3" }
+  { title: "24 songs - Ego", src: "24 songs - Ego.mp3" },
+  { title: "Bando - carti", src: "Bando - carti.mp3" },
+  { title: "Playboi Carti - Molly", src: "Playboi Carti - Molly.mp3" }
 ];
 
 let currentTrackIndex = 0;
+let isPlaying = false;
 
 function loadTrack(index) {
   const track = playlist[index];
   audioPlayer.src = track.src;
   document.querySelector('.song-title').textContent = track.title;
   audioPlayer.load();
+  audioPlayer.volume = 0.21;
+  volumeBar.value = 21;
+  currentTimeDisplay.textContent = formatTime(0);
+  durationDisplay.textContent = formatTime(audioPlayer.duration);
+  if (isPlaying) {
+    audioPlayer.play();
+  }
 }
 
 function formatTime(seconds) {
@@ -44,9 +52,11 @@ function formatTime(seconds) {
 audioPlayer.addEventListener('timeupdate', () => {
   const currentTime = audioPlayer.currentTime;
   const duration = audioPlayer.duration;
-  progressBar.value = (currentTime / duration) * 100;
-  currentTimeDisplay.textContent = formatTime(currentTime);
-  durationDisplay.textContent = formatTime(duration);
+  if (!isNaN(duration)) {
+    progressBar.value = (currentTime / duration) * 100;
+    currentTimeDisplay.textContent = formatTime(currentTime);
+    durationDisplay.textContent = formatTime(duration);
+  }
 });
 
 progressBar.addEventListener('input', () => {
@@ -60,11 +70,13 @@ volumeBar.addEventListener('input', () => {
 });
 
 playPauseButton.addEventListener('click', () => {
-  if (audioPlayer.paused) {
+  if (audioPlayer.paused || audioPlayer.ended) {
     audioPlayer.play();
+    isPlaying = true;
     playPauseButton.querySelector('img').src = 'botao-de-av.png';
   } else {
     audioPlayer.pause();
+    isPlaying = false;
     playPauseButton.querySelector('img').src = 'toque.png';
   }
 });
@@ -72,13 +84,11 @@ playPauseButton.addEventListener('click', () => {
 nextButton.addEventListener('click', () => {
   currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
   loadTrack(currentTrackIndex);
-  audioPlayer.play();
 });
 
 prevButton.addEventListener('click', () => {
   currentTrackIndex = (currentTrackIndex - 1 + playlist.length) % playlist.length;
   loadTrack(currentTrackIndex);
-  audioPlayer.play();
 });
 
 loadTrack(currentTrackIndex);
